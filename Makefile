@@ -9,6 +9,7 @@ docker-run-jupyter:
 		--name jupyter \
 		-p 8888:8888 \
 		-v $(CURDIR)/jupyter/.jupyter/nbconfig:/home/jovyan/.jupyter/nbconfig \
+		-v $(CURDIR)/jupyter/.ipython/profile_default:/home/jobyan/.ipython/profile_default \
 		-v $(#set dir):/home/jovyan \
 		aikiyy/jupyter \
 		start-notebook.sh \
@@ -23,5 +24,5 @@ docker-run-postgres:
 		-d \
 		--name postgres \
 		-p 5435:5432 \
-		-v $(CURDIR)/postgres/sql_file:/docker-entrypoint-initdb.d \
+		-v $(CURDIR)/sql_file:/docker-entrypoint-initdb.d \
 		aikiyy/postgres
