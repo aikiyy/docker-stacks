@@ -1,8 +1,8 @@
 .PHONY: run
-docker-build:
+docker-build-jupyter:
 	docker build -t aikiyy/jupyter jupyter
 
-docker-run:
+docker-run-jupyter:
 	docker run \
 		-it \
 		-d \
@@ -13,3 +13,15 @@ docker-run:
 		aikiyy/jupyter \
 		start-notebook.sh \
 		--NotebookApp.password=$(#set password)
+
+docker-build-postgres:
+	docker build -t aikiyy/postgres postgres
+
+docker-run-postgres:
+	docker run \
+		-it \
+		-d \
+		--name postgres \
+		-p 5435:5432 \
+		-v $(CURDIR)/postgres/sql_file:/docker-entrypoint-initdb.d \
+		aikiyy/postgres
