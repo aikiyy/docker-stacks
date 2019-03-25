@@ -10,10 +10,11 @@ docker-run-jupyter:
 		-p 8888:8888 \
 		-v $(CURDIR)/jupyter/.jupyter/nbconfig:/home/jovyan/.jupyter/nbconfig \
 		-v $(CURDIR)/jupyter/.ipython/profile_default:/home/jobyan/.ipython/profile_default \
-		-v $(#set dir):/home/jovyan \
+		-v $(JUPYTER_DOCKER_HOME_DIR):/home/jovyan \
 		aikiyy/jupyter \
 		start-notebook.sh \
-		--NotebookApp.password=$(#set password)
+		--NotebookApp.token='' \
+		--NotebookApp.password=''
 
 docker-build-postgres:
 	docker build -t aikiyy/postgres postgres
@@ -23,6 +24,6 @@ docker-run-postgres:
 		-it \
 		-d \
 		--name postgres \
-		-p 5435:5432 \
+		-p 5434:5432 \
 		-v $(CURDIR)/sql_file:/docker-entrypoint-initdb.d \
 		aikiyy/postgres
