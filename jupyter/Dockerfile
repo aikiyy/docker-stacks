@@ -7,4 +7,4 @@ RUN pip install --upgrade pip
 RUN pip install -r $HOME/requirements.txt
 
 COPY .jupyter/custom $HOME/.jupyter/custom
-COPY .ipython/profile_default $HOME/.ipython/profile_default
+COPY .ipython/profile_default/ipython_config.py $HOME/ipython_config.py
