@@ -9,8 +9,7 @@ docker-run-jupyter:
 		--name jupyter \
 		-p 8888:8888 \
 		-v $(CURDIR)/jupyter/.jupyter/nbconfig:/home/jovyan/.jupyter/nbconfig \
-		-v $(CURDIR)/jupyter/.ipython/profile_default:/home/jobyan/.ipython/profile_default \
-		-v $(JUPYTER_DOCKER_HOME_DIR):/home/jovyan \
+		-v $(JUPYTER_DOCKER_HOME_DIR):/home/jovyan/work \
 		aikiyy/jupyter \
 		start-notebook.sh \
 		--NotebookApp.token='' \
