@@ -8,7 +8,6 @@ docker-run-jupyter:
 		-d \
 		--name jupyter \
 		-p 8888:8888 \
-		-v $(CURDIR)/jupyter/.jupyter/nbconfig:/home/jovyan/.jupyter/nbconfig \
 		-v $(JUPYTER_DOCKER_HOME_DIR):/home/jovyan/work \
 		aikiyy/jupyter \
 		start-notebook.sh \

@@ -1,3 +1,2 @@
 jupyterthemes
 plotly
-psycopg2
