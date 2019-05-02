@@ -25,3 +25,12 @@ docker-run-postgres:
 		-p 5434:5432 \
 		-v $(CURDIR)/sql_file:/docker-entrypoint-initdb.d \
 		aikiyy/postgres
+
+docker-run-r:
+	docker run \
+		-it \
+		-d \
+		--name rstudio \
+		-p 8787:8787 \
+		-v $(R_DOCKER_HOME_DIR):/home/rstudio \
+		tokyor/rstudio
