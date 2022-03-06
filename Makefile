@@ -7,7 +7,7 @@ docker-run-jupyter:
 		-it \
 		-d \
 		--name jupyter \
-		-p 8888:8888 \
+		-p 8889:8888 \
 		-v $(JUPYTER_DOCKER_HOME_DIR):/home/jovyan/work \
 		aikiyy/jupyter \
 		start-notebook.sh \
