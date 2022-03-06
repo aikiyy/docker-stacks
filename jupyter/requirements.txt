@@ -1,2 +1,4 @@
 jupyterthemes
 plotly
+tqdm
+google-cloud-bigquery

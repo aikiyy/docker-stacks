@@ -15,3 +15,6 @@ COPY .ipython/profile_default/ipython_config.py $HOME/.ipython/profile_default/i
 ENV CONFIG /home/jovyan/.jupyter/jupyter_notebook_config.py
 ENV CONFIG_IPYTHON /home/jovyan/.ipython/profile_default/ipython_config.py
 COPY .jupyter/nbconfig $HOME/.jupyter/nbconfig
+
+# Load Google Application Credential
+ENV GOOGLE_APPLICATION_CREDENTIALS ./config/metabase-189510-5a915957d013.json
